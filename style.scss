@@ -1,0 +1,52 @@
+$primary-color:#d9f473;
+$color-2nd:#5697ee;
+.menu{
+	ul{
+		background:blue;
+		li{
+			color:red;
+			&:hover{
+				color:white;
+				background:$primary-color;
+			}
+		}
+	}
+}
+.main{
+	background:black;
+	color:white;
+}
+.body{
+	background:$primary-color;
+}
+@mixin screen-1{
+	padding: 5px 10px;
+	background:black;
+	color:white;
+}
+.header1{
+	@include screen-1;
+}
+.header2{
+	@extend .header1;
+	&:hover{
+		background:white;
+		color:white;
+	}
+}
+%name{
+	width: 100px;
+	height: 200px;
+}
+.name1{
+	@extend %name;
+	background:$color-2nd;
+}
+%img{
+	background-image: url('relife.png');
+	background-size:500px auto;
+
+}
+.img1{
+	@extend %img;
+}
